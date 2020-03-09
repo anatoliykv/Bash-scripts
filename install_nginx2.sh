@@ -1,4 +1,10 @@
 #!/bin/bash
+#OS version function
+showOSversion() {
+    echo "My OS version is: `cat /proc/version`"
+}
+showOSversion
+
 echo -e "\n\e[42;1m Chose your OS:\e[0m
 Enter \e[36;1m1\e[0m for Ubuntu
 Enter \e[36;1m2\e[0m for \e[31mRHEL\e[0m
