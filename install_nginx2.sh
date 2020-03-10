@@ -20,7 +20,8 @@ then
     curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
     apt update
     apt install nginx -y
-    #Red Hat
+    service nginx restart
+#Red Hat
 elif [ $OS = 2 ]
 then
     echo -e "\e[41;1m RHEL was selected \e[0m"
