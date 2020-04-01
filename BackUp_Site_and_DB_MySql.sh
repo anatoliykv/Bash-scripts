@@ -25,7 +25,7 @@ else
             echo "Archive is failed"
             exit 1
         else
-            echo "Archive has creaded successfuly"
+            echo "Archive was creaded successfuly"
         fi
     else
         echo "Failled"
