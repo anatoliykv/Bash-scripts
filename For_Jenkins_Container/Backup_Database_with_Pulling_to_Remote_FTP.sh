@@ -23,5 +23,5 @@ if [ -f *.sql.gz ]; then
     echo "Error"
     exit 1
 else
-    echo "Success!"
+    echo "Success, local archive was deleted successfully!"
 fi
