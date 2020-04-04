@@ -6,7 +6,7 @@ mysqldump -u $mysql_login -p$mysql_password $database_name | gzip > `date +./%d.
 scp -i $key_path ~/$backup_folder/*.sql.gz $ftp_path
 rm ~/$backup_folder/*.sql.gz
 if [ -f *.sql.gz ]; then
-echo "Error"
+    echo "Error"
 else
-echo "Success!"
+    echo "Success!"
 fi
