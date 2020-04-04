@@ -3,7 +3,12 @@ rm -rf $backup_folder
 mkdir $backup_folder
 cd ~/$backup_folder
 mysqldump -u $mysql_login -p$mysql_password $database_name | gzip > `date +./%d.%m.%Y.%H-%M-%S.sql.gz`
-scp -i $key_path ~/$backup_folder/*.sql.gz $ftp_path
+#Testing creating backup file
+if [ -f *.sql.gz ]; then
+    scp -i $key_path ~/$backup_folder/*.sql.gz $ftp_path
+else
+    echo "Error! File not found!"
+fi
 #Testing pushing to FTP
 if [ $? -ne 0 ]; then
     echo "Error pushing to FTP"
