@@ -8,6 +8,7 @@ if [ -f *.sql.gz ]; then
     scp -i $key_path ~/$backup_folder/*.sql.gz $ftp_path
 else
     echo "Error! File not found!"
+    exit 1
 fi
 #Testing pushing to FTP
 if [ $? -ne 0 ]; then
