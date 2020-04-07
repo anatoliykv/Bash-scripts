@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  jenkins:
+    image: jenkins/jenkins
+    restart: always
+    ports:
+      - 8080:8080
+      - 50000:50000
+    environment:
+      TZ: Europe/Kiev
+    volumes:
+      - ~/jenkins:/var/jenkins_home
+      - ~/.ssh:/var/jenkins_home/zabbix_ssh
+      - /var/lib/mysql/zabbix:/var/jenkins_home/zabbix_db
+      - /usr/bin/mysqldump:/usr/bin/mysqldump
+      - /usr/bin/mysql:/usr/bin/mysql
+      - /usr/bin/mysqlcheck:/usr/bin/mysqlcheck
+      - /lib/x86_64-linux-gnu/libreadline.so.5:/lib/x86_64-linux-gnu/libreadline.so.5
+      - /var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock
