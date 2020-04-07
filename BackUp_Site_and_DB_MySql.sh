@@ -7,7 +7,7 @@ if [ -d "/var/www/html" ]; then
         if [ "$?" -ne 0 ]; then
             # $? - this is return code from previous command
             echo "Archive is failed"
-            # termination logic here
+            # termination logic
             exit 1
         else
             echo "Archive has creaded successfuly"
