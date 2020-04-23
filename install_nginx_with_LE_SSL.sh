@@ -9,8 +9,6 @@ sudo apt install nginx -y
 
 #Uncomment server name, 443 port ipv4 and ipv6
 sudo sed -i "s/server_name _;/server_name ${DOMAIN_NAME};/" /etc/nginx/sites-available/default
-#sudo sed -i 's/# listen 443 ssl default_server;/listen 443 ssl default_server;/' /etc/nginx/sites-available/default
-#sudo sed -i 's/# listen [::]:443 ssl default_server;/listen [::]:443 ssl default_server;/' /etc/nginx/sites-available/default
 
 nginx -s reload # Checking the correct config and reloading nginx with new config
 if [ $? -ne 0 ]; then
