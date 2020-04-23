@@ -2,12 +2,12 @@
 set -e
 echo "Enter your domain name"
 read DOMAIN_NAME
-echo "Enter your email for Cerbot"
+echo "Enter your email for Certbot"
 read EMAIL
 sudo apt update
 sudo apt install nginx -y
 
-#Editing Nginx config
+#Editing Default Nginx config
 sudo sed -i "s/server_name _;/server_name ${DOMAIN_NAME};/" /etc/nginx/sites-available/default
 
 nginx -s reload # Checking the correct config and reloading nginx with new config
