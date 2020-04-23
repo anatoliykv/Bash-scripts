@@ -37,8 +37,8 @@ if [ $? -ne 0 ]; then
     exit 1
 else
     sudo service nginx restart
-    echo "Success!\
-    Your site is ready!"
+    echo "Success!\n
+          Your site is ready!"
 fi
 #Test renewal cert
 sudo certbot renew --dry-run
