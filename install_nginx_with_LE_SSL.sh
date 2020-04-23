@@ -7,7 +7,7 @@ read EMAIL
 sudo apt update
 sudo apt install nginx -y
 
-#Uncomment server name, 443 port ipv4 and ipv6
+#Editing Nginx config
 sudo sed -i "s/server_name _;/server_name ${DOMAIN_NAME};/" /etc/nginx/sites-available/default
 
 nginx -s reload # Checking the correct config and reloading nginx with new config
@@ -23,7 +23,7 @@ else
         echo "Nginx started"
     fi
 fi
-#Installing Cerbot
+#Installing Certbot
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository universe
 sudo add-apt-repository -y ppa:certbot/certbot
