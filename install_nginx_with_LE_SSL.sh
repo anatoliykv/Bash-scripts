@@ -6,7 +6,7 @@ read EMAIL
 sudo apt update
 sudo apt install nginx -y
 
-sed 's/danger/safety/' testfile.txt
+sed -i 's/server_name/server_name $DOMAIN_NAME;/' /etc/nginx/sites-available/default
 
 #Installing Cerbot
 sudo apt-get update
