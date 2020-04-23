@@ -18,6 +18,11 @@ if [ $? -ne 0 ]; then
     exit 1
 else
     sudo service nginx restart
+    if [ $? -ne 0 ]; then
+        echo "Nginx can't run sorry!"
+        exit 1
+    else
+        echo "Nginx started"
 fi
 #Installing Cerbot
 sudo apt-get install -y software-properties-common
@@ -33,5 +38,6 @@ if [ $? -ne 0 ]; then
     exit 1
 else
     sudo service nginx restart
-    echo "Success!"
+    echo "Success!\
+    Your site is ready!"
 fi
