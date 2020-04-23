@@ -48,5 +48,5 @@ if [ $? -ne 0 ]; then
     echo "Error"
     exit 1
 else
-    echo "Certificat will be renewal"
+    echo "Certificate will be renewed."
 fi
