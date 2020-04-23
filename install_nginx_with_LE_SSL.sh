@@ -8,7 +8,7 @@ sudo apt update
 sudo apt install nginx -y
 
 #Uncomment server name, 443 port ipv4 and ipv6
-sudo sed -i 's/server_name/server_name $DOMAIN_NAME;/' /etc/nginx/sites-available/default
+sudo sed -i "s/server_name _;/server_name ${DOMAIN_NAME};/" /etc/nginx/sites-available/default
 #sudo sed -i 's/# listen 443 ssl default_server;/listen 443 ssl default_server;/' /etc/nginx/sites-available/default
 #sudo sed -i 's/# listen [::]:443 ssl default_server;/listen [::]:443 ssl default_server;/' /etc/nginx/sites-available/default
 
@@ -23,11 +23,12 @@ else
         exit 1
     else
         echo "Nginx started"
+    fi
 fi
 #Installing Cerbot
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository universe
-sudo add-apt-repository ppa:certbot/certbot
+sudo add-apt-repository -y ppa:certbot/certbot
 sudo apt-get update
 
 sudo apt-get install -y certbot python-certbot-nginx
@@ -40,4 +41,12 @@ else
     sudo service nginx restart
     echo "Success!\
     Your site is ready!"
+fi
+#Test renewal cert
+sudo certbot renew --dry-run
+if [ $? -ne 0 ]; then
+    echo "Error"
+    exit 1
+else
+    echo "Certificat will be renewal"
 fi
