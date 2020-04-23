@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Installing NGINX on Debian based distriburives
+# with Let's Encrypt certificate and renewal it. 
 set -e
 echo "Enter your domain name"
 read DOMAIN_NAME
