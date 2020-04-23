@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Installing NGINX on Debian based distriburives
+# Installing NGINX on Debian based distributions 
 # with Let's Encrypt certificate and renewal it. 
 
 set -e
