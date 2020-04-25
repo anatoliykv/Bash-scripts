@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Installing NGINX on Debian based distributions 
-# with Let's Encrypt certificate and renewal it. 
+# Installing NGINX on Debian based distributions
+# with Let's Encrypt certificate and renewal it.
 
 set -e
 echo "Enter your domain name"
@@ -42,7 +42,7 @@ if [ $? -ne 0 ]; then
 else
     sudo service nginx restart
     echo "Success!\n
-          Your site is ready!"
+    Your site is ready!"
 fi
 #Test renewal cert
 sudo certbot renew --dry-run
