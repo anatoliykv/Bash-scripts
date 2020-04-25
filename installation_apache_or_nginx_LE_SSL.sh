@@ -17,9 +17,9 @@ echo -e "\e[41mPlease, chose next web server:\e[0m
 read WEB_SERVER
 
 # Removig previous Nginx or Apache and Certbot
-sudo apt purge nginx* -y
-sudo apt purge apache* -y
-sudo apt purge certbot -y
+( sudo apt purge nginx* -y; \
+sudo apt purge apache* -y; \
+sudo apt purge certbot -y ) && \
 sudo apt autoremove -y
 
 function certbot () {
