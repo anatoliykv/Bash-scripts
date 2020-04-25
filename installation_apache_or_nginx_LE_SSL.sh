@@ -119,4 +119,3 @@ case "$WEB_SERVER" in
         exit 0
     ;;
 esac
-sudo apt autoremove -y
