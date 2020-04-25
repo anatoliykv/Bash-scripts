@@ -41,17 +41,15 @@ fi
 #installing cerbot with email, email wount be shared, agree tos and redirect to https
 sudo certbot --"$server" -m "$EMAIL" --no-eff-email -n --agree-tos --domains "$DOMAIN_NAME" --redirect
 if [ $? -ne 0 ]; then
-    echo "Error"
+    echo -e "Error"
     exit 1
 else
     if [ "$WEB_SERVER" = 1 ]; then
     sudo service apache2 restart
-    echo "Success!\n
-          Your Apache web server is ready!"
+    echo -e "Success! \nYour Apache web server is ready!"
     elif [ "$WEB_SERVER" = 2 ];then
     sudo service nginx restart
-    echo "Success!\n
-          Your Nginx web server is ready!"
+    echo -e "Success! \nYour Apache web server is ready!"
     else
     echo "Error"
     exit 1
@@ -116,8 +114,7 @@ case "$WEB_SERVER" in
     certbot
     ;;
     *)
-        echo "You don't chosed web server\n
-              Bye!"
+        echo -e "You don't chosed web server \nBye!"
         exit 0
     ;;
 esac
