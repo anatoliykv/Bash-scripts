@@ -23,17 +23,17 @@ sudo add-apt-repository universe
 sudo add-apt-repository -y ppa:certbot/certbot
 sudo apt-get update
 
-if [ $WEB_SERVER = 1 ]; then
+if [ "$WEB_SERVER" = 1 ]; then
      sudo apt-get install -y certbot python-certbot-apache
-elif [ $WEB_SERVER = 2 ]; then
+elif [ "$WEB_SERVER" = 2 ]; then
      sudo apt-get install -y certbot python-certbot-nginx
 else
      echo "Error"
      exit 1
 fi
-if [ $WEB_SERVER = 1 ]; then
+if [ "$WEB_SERVER" = 1 ]; then
     server="apache"
-elif [ $WEB_SERVER = 2 ]; then
+elif [ "$WEB_SERVER" = 2 ]; then
     server="nginx"
 else
     echo "Error"
