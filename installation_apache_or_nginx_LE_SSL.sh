@@ -115,7 +115,7 @@ case "$WEB_SERVER" in
     certbot # Call Certbot function
     ;;
     *)
-        echo -e "You didn't  choose web server \nBye!"
+        echo -e "You didn't choose web server \nBye!"
         exit 0
     ;;
 esac
