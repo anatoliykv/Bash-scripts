@@ -4,6 +4,7 @@
 # with Let's Encrypt certificate and renewal it.
 
 set -e
+
 echo "Enter domain name"
 read DOMAIN_NAME
 echo "Enter email for Certbot"
