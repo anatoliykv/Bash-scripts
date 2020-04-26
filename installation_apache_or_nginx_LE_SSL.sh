@@ -19,7 +19,7 @@ read WEB_SERVER
 
 # Removig previous Nginx or Apache and Certbot
 ( sudo apt purge nginx* -y; \
-    sudo apt purge apache* -y; \
+sudo apt purge apache* -y; \
 sudo apt purge certbot -y ) && \
 sudo apt autoremove -y
 
